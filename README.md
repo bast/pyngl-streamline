@@ -23,4 +23,4 @@ The script colors the streamlines according to the vector norm
 
 Example result using the [plot](../master/plot) script:
 
-![alt text](https://github.com/rbast/pyngl-scripts/raw/master/plot.2d.example.jpg "Ring current")
+![alt text](https://github.com/rbast/pyngl-streamline/raw/master/plot.2d.example.jpg "Ring current")
