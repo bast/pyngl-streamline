@@ -5,7 +5,7 @@ pyngl-streamline
 
 Script to generate colored streamline plots
 using [PyNGL](http://www.pyngl.ucar.edu/).
-Licensed under [LGPLv3](../master/LICENSE).
+Licensed under [BSD-3](../master/LICENSE).
 
 Example usage:
 
