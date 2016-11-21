@@ -12,7 +12,7 @@ Licensed under [BSD-3](../master/LICENSE).
 We recommend to follow https://www.pyngl.ucar.edu/Download/.
 
 
-## Example
+## Usage
 
 ```shell
 $ python streamline.py --data=data_file
@@ -26,6 +26,14 @@ to color the streamlines (you decide what that value means).
 The script colors the streamlines according to the vector norm
 (and using --rgb_min, --rgb_max, and --smax).
 
-Example result using the [example.sh](../master/example.sh) script:
+To see all available options, please run:
+```shell
+$ python streamline.py --help
+```
 
-![alt text](https://github.com/bast/pyngl-streamline/raw/master/plot.2d.example.jpg "Ring current")
+
+## Example
+
+Example result using the [example.sh](../master/example/example.sh) script:
+
+![alt text](https://github.com/bast/pyngl-streamline/raw/master/example/plot.2d.example.jpg "Ring current")
