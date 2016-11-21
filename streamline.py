@@ -193,7 +193,7 @@ def read_data(options):
                 v_slice.append(v_l[ipoint])
             s_slice.append(s_l[ipoint])
 
-            ipoint = ipoint + 1
+            ipoint += 1
 
         u_array.append(u_slice)
         v_array.append(v_slice)
