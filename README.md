@@ -6,7 +6,13 @@ Script to generate colored streamline plots
 using [PyNGL](http://www.pyngl.ucar.edu/).
 Licensed under [BSD-3](../master/LICENSE).
 
-Example usage:
+
+## Installation of PyNGL
+
+We recommend to follow https://www.pyngl.ucar.edu/Download/.
+
+
+## Example
 
 ```shell
 $ python streamline.py --data=data_file
