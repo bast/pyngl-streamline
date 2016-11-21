@@ -64,11 +64,12 @@ def parse_input():
 def read_molecule(options):
     molecule = []
     if options.molecule:
-        for line in open(options.molecule).readlines():
-            e = line.split()[0]
-            x = float(line.split()[1])
-            y = float(line.split()[2])
-            molecule.append([e, x, y])
+        with open(options.molecule, 'r') as f:
+            for line in f:
+                e = line.split()[0]
+                x = float(line.split()[1])
+                y = float(line.split()[2])
+                molecule.append([e, x, y])
     return molecule
 
 
@@ -121,12 +122,12 @@ def get_vector_res(options, x_min, x_max, y_min, y_max):
 
 def read_data(options):
     from math import sqrt
-    import string
     import numpy
 
-    f = open(options.data, 'r')
-    data = map(string.strip, f.readlines())
-    f.close()
+    data = []
+    with open(options.data, 'r') as f:
+        for line in f:
+            data.append(line.strip('\n'))
 
     x_l = []
     y_l = []
