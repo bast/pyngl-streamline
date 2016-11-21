@@ -1,7 +1,6 @@
+[![License](https://img.shields.io/badge/license-%20BSD--3-blue.svg)](../master/LICENSE)
 
-
-pyngl-streamline
-================
+# pyngl-streamline
 
 Script to generate colored streamline plots
 using [PyNGL](http://www.pyngl.ucar.edu/).
