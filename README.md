@@ -9,7 +9,10 @@ Licensed under [BSD-3](../master/LICENSE).
 
 ## Installation of PyNGL
 
-We recommend to follow https://www.pyngl.ucar.edu/Download/.
+We recommend to follow https://www.pyngl.ucar.edu/Download/.  If you have
+Anaconda already installed, we recommend to install PyNGL using Anaconda.  In
+case you have neither Anaconda nor Miniconda, we recommend installing PyNGL
+using Miniconda (faster and smaller disk usage).
 
 
 ## Usage
