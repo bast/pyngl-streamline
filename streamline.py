@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 def parse_input():
     from optparse import OptionParser, OptionGroup
     import sys
@@ -76,48 +77,47 @@ def get_vector_res(options, x_min, x_max, y_min, y_max):
 
     vector_res = Ngl.Resources()
 
-    vector_res.nglFrame                 = False
-    vector_res.nglMaximize              = False
+    vector_res.nglFrame = False
+    vector_res.nglMaximize = False
 
-    vector_res.vpWidthF                 = 0.5
-    vector_res.vpHeightF                = 0.5
+    vector_res.vpWidthF = 0.5
+    vector_res.vpHeightF = 0.5
 
-    vector_res.vcGlyphStyle             = "CurlyVector"
+    vector_res.vcGlyphStyle = "CurlyVector"
     vector_res.vcMonoFillArrowFillColor = False
-    vector_res.vcRefLengthF             = 0.2
-    vector_res.vcMinDistanceF           = 0.01
-    vector_res.vcLineArrowThicknessF    = 1.0
-    vector_res.vcRefAnnoOn              = False
+    vector_res.vcRefLengthF = 0.2
+    vector_res.vcMinDistanceF = 0.01
+    vector_res.vcLineArrowThicknessF = 1.0
+    vector_res.vcRefAnnoOn = False
 
-    vector_res.vfXCStartV               = x_min
-    vector_res.vfXCEndV                 = x_max
-    vector_res.vfYCStartV               = y_min
-    vector_res.vfYCEndV                 = y_max
+    vector_res.vfXCStartV = x_min
+    vector_res.vfXCEndV = x_max
+    vector_res.vfYCStartV = y_min
+    vector_res.vfYCEndV = y_max
 
-    line_thickness                      = 2.0
-    vector_res.tmXBFormat               = "f"
-    vector_res.tmYLFormat               = "f"
-    vector_res.tmXBMajorThicknessF      = line_thickness
-    vector_res.tmXBMinorThicknessF      = line_thickness/2.0
-    vector_res.tmXTMajorThicknessF      = line_thickness
-    vector_res.tmXTMinorThicknessF      = line_thickness/2.0
-    vector_res.tmYLMajorThicknessF      = line_thickness
-    vector_res.tmYLMinorThicknessF      = line_thickness/2.0
-    vector_res.tmYRMajorThicknessF      = line_thickness
-    vector_res.tmYRMinorThicknessF      = line_thickness/2.0
-    vector_res.tmBorderThicknessF       = line_thickness
+    line_thickness = 2.0
+    vector_res.tmXBFormat = "f"
+    vector_res.tmYLFormat = "f"
+    vector_res.tmXBMajorThicknessF = line_thickness
+    vector_res.tmXBMinorThicknessF = line_thickness / 2.0
+    vector_res.tmXTMajorThicknessF = line_thickness
+    vector_res.tmXTMinorThicknessF = line_thickness / 2.0
+    vector_res.tmYLMajorThicknessF = line_thickness
+    vector_res.tmYLMinorThicknessF = line_thickness / 2.0
+    vector_res.tmYRMajorThicknessF = line_thickness
+    vector_res.tmYRMinorThicknessF = line_thickness / 2.0
+    vector_res.tmBorderThicknessF = line_thickness
 
     if options.legend:
-        vector_res.lbOrientation            = "Horizontal"
+        vector_res.lbOrientation = "Horizontal"
         vector_res.pmLabelBarOrthogonalPosF = 0.1
-        vector_res.pmLabelBarHeightF        = 0.05
-        vector_res.pmLabelBarWidthF         = 0.3
+        vector_res.pmLabelBarHeightF = 0.05
+        vector_res.pmLabelBarWidthF = 0.3
     else:
         vector_res.lbLabelBarOn = False
 
     return vector_res
 
-#-------------------------------------------------------------------------------
 
 def read_data(options):
     from math import sqrt
@@ -185,8 +185,8 @@ def read_data(options):
             norm = (u_l[ipoint]**2.0 + v_l[ipoint]**2.0)**0.5
 
             if abs(norm) > 1.0e-15:
-                u_slice.append(u_l[ipoint]/norm)
-                v_slice.append(v_l[ipoint]/norm)
+                u_slice.append(u_l[ipoint] / norm)
+                v_slice.append(v_l[ipoint] / norm)
             else:
                 u_slice.append(u_l[ipoint])
                 v_slice.append(v_l[ipoint])
@@ -216,9 +216,9 @@ def main():
     wks_type = 'ps'
     wks = Ngl.open_wks(wks_type, options.data)
 
-    color_res  = Ngl.Resources()
-    gs_res     = Ngl.Resources()
-    text_res   = Ngl.Resources()
+    color_res = Ngl.Resources()
+    gs_res = Ngl.Resources()
+    text_res = Ngl.Resources()
 
     rgb_min = []
     for s in options.rgb_min.split():
@@ -234,14 +234,14 @@ def main():
     l.append([0.00, 0.00, 0.00])
 
     f_l = []
-    n   = 100
+    n = 100
     for f in range(n):
-        f_l.append(float((f+1)*(1.0/n)))
+        f_l.append(float((f + 1) * (1.0 / n)))
 
     for f in f_l:
-        r = rgb_min[0] + f*(rgb_max[0]-rgb_min[0])
-        g = rgb_min[1] + f*(rgb_max[1]-rgb_min[1])
-        b = rgb_min[2] + f*(rgb_max[2]-rgb_min[2])
+        r = rgb_min[0] + f * (rgb_max[0] - rgb_min[0])
+        g = rgb_min[1] + f * (rgb_max[1] - rgb_min[1])
+        b = rgb_min[2] + f * (rgb_max[2] - rgb_min[2])
         l.append([r, g, b])
 
     rgb_map = numpy.array(l, 'f')
@@ -255,16 +255,16 @@ def main():
     color_res.wkColorMap = "default"
     Ngl.set_values(wks, color_res)
 
-    line_thickness            = 2.0
+    line_thickness = 2.0
 
-    gs_res.gsMarkerSizeF      = 10.0
+    gs_res.gsMarkerSizeF = 10.0
     gs_res.gsMarkerThicknessF = 2.0
-    gs_res.gsLineDashPattern  = 2
-    gs_res.gsLineThicknessF   = line_thickness
+    gs_res.gsLineDashPattern = 2
+    gs_res.gsLineThicknessF = line_thickness
 
-    text_res.txFont        = 21
+    text_res.txFont = 21
     text_res.txFontHeightF = 0.015
-    text_res.txFontColor   = options.text_color
+    text_res.txFontColor = options.text_color
 
     for atom in read_molecule(options):
 
