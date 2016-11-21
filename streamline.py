@@ -145,7 +145,7 @@ def read_data(options):
         if len(line.split()) == 5:
             s = float(line.split()[4])
         else:
-            s = (u**2.0 + v**2.0)**0.5
+            s = sqrt(u**2.0 + v**2.0)
 
         if s > options.smax:
             s = options.smax
