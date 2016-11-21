@@ -26,6 +26,6 @@ to color the streamlines (you decide what that value means).
 The script colors the streamlines according to the vector norm
 (and using --rgb_min, --rgb_max, and --smax).
 
-Example result using the [plot](../master/plot) script:
+Example result using the [example.sh](../master/example.sh) script:
 
 ![alt text](https://github.com/bast/pyngl-streamline/raw/master/plot.2d.example.jpg "Ring current")
